@@ -17,7 +17,7 @@ public class Projecte {
     public static void main(String[] args) {
         Scanner teclat = new Scanner(System.in);
         sacarInicio();
-        System.out.println(preguntaInicio());
+        preguntaInicio();
     }
 
     public static void sacarInicio() {
@@ -33,17 +33,32 @@ public class Projecte {
                 ANSI_RED + "Gandalf:" + ANSI_RESET + " Por favor hobbits, debéis encargaros de encontrarlo y destruirlo de nuevo en el Monte del Destino de Mordor pero esta vez no podéis fallar.\n");
     }
 
-    public static boolean preguntaInicio() {
-        boolean siguienteNivel = true;
+    public static void preguntaInicio() {
         Scanner teclat = new Scanner(System.in);
         System.out.println("¿Quieres que Frodo y sus compañeros acepten el reto de Gandalf y vayan a buscar el anillo para destruirlo? (SÍ / NO)\n");
         switch (teclat.nextLine()) {
-            case "SI" -> siguienteNivel = true;
-            case "NO" -> siguienteNivel = false;
+            case "SI" -> nivell1(true);
+            case "NO" -> fi(false);
         }
-        return siguienteNivel;
     }
 
-    public static void fi(boolean )
+    public static void fi(boolean siONo) {
+        if (siONo == false) {
+            System.out.println("Adios");
+        }
+    }
+
+    public static void nivell1(boolean siONo) {
+        if (siONo == true) {
+            System.out.println(ANSI_PURPLE+"Frodo:"+ANSI_RESET+" ¡Muy bien! Vamos a buscar a ese granuja de Gollum. Le robaremos el anillo y esta vez lo destruiremos. No fue fácil entonces, ni tampoco ahora, pero  lo conseguiremos, ¿verdad, chicos? \n" +
+                    "\n" +
+                    ANSI_BLUE+"Sam:"+ANSI_RESET+" ¡Sí! ¡Vamos! Pero… debemos preparar todo lo necesario para afrontar de nuevo los diferentes desafíos que se nos van a proponer. Botas, guantes, agua para el camino, y p….. ¡No hay pan señor Frodo!.\n" +
+                    " \n" +
+                    ANSI_PURPLE+"Frodo:"+ANSI_RESET+" Los sacos de trigo no llegan hasta la semana que viene y nos hace falta pan para salir mañana de manera urgente.\n" +
+                    "\n" +
+                    ANSI_RED + "Gandalf:" + ANSI_RESET +" Os propongo un juego. Si lo ganáis os diré mi conjuro panadero con el que podréis crear todos los panes que queráis. ¿Sabríais adivinar cuántas parejas de vocales tiene el siguiente hechizo élfico?  ");
+        }
+
+    }
 
 }
